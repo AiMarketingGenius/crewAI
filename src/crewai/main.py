@@ -1,29 +1,23 @@
-from crewai import Crew, Agent, Task
-from langchain.llms import OpenAI
-
-llm = OpenAI(temperature=0)
+from crewai import Agent, Task, Crew
 
 # Define an agent
 agent = Agent(
-    role='Senior Research Analyst',
-    goal='Extract and summarize key business findings from documents',
-    backstory='You are a top analyst trained to extract critical insights from dense information.',
-    verbose=True,
-    allow_delegation=False,
-    llm=llm
+    role="Senior Technical Writer",
+    goal="Turn complex research into plain English",
+    backstory="Has 15 years of experience translating dense technical documentation into readable summaries.",
+    verbose=True
 )
 
-# Define a task
+# Define a task — THIS was missing expected_output
 task = Task(
-    description='Summarize the business implications from a document passed via environment or input.',
+    description="Summarize the following research paper in plain English for a general audience.",
+    expected_output="A one-paragraph summary that is simple, clear, and avoids jargon.",
     agent=agent
 )
 
-# Define the Crew
+# Crew setup
 crew = Crew(
     agents=[agent],
     tasks=[task],
-    verbose=2
+    verbose=True
 )
-
-crew.kickoff()
