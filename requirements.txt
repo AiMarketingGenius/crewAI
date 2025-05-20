@@ -1,8 +1,7 @@
 langchain==0.1.0
-openai==1.13.3
-json-repair==0.25.2
+openai==1.69.0
+litellm==1.68.0
 chromadb==0.5.23
 appdirs==1.4.4
 blinker==1.9.0
-opentelemetry-exporter-otlp-proto-http==1.30.0
-litellm==1.68.0
+json-repair==0.25.2
