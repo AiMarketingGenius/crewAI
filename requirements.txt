@@ -1,5 +1,5 @@
 langchain==0.1.0
-openai==1.13.3
+openai==1.68.2
 litellm==1.68.0
 chromadb==0.5.23
 appdirs==1.4.4
