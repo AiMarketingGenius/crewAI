@@ -17,10 +17,10 @@ class KBWatcher(FileSystemEventHandler):
             summarize_docx(event.src_path)
 
 if __name__ == "__main__":
-    path = os.getenv("KB_WATCH_FOLDER", "./test_kb_uploads")
-os.makedirs(path, exist_ok=True)  # Ensure folder exists
-    event_handler = KBWatcher()
-    observer = Observer()
-    observer.schedule(event_handler, path=path, recursive=True)
-    observer.start()
-    print(f"👁️ Watching KB folder: {path}")
+    if __name__ == "__main__":
+  path = os.getenv("KB_WATCH_FOLDER", "./test_kb_uploads")
+  event_handler = KBWatcher()
+  observer = Observer()
+  observer.schedule(event_handler, path=path, recursive=True)
+  observer.start()
+  print(f"📂 Watching KB folder: {path}")
