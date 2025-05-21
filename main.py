@@ -17,7 +17,7 @@ class KBWatcher(FileSystemEventHandler):
             summarize_docx(event.src_path)
 
 if __name__ == "__main__":
-    path = os.getenv("KB_WATCH_FOLDER", "/mnt/data/System Memory Archives (All Projects)")
+    path = os.getenv("KB_WATCH_FOLDER", "./test_kb_uploads")
     event_handler = KBWatcher()
     observer = Observer()
     observer.schedule(event_handler, path=path, recursive=True)
