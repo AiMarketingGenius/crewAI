@@ -18,6 +18,7 @@ class KBWatcher(FileSystemEventHandler):
 
 if __name__ == "__main__":
     path = os.getenv("KB_WATCH_FOLDER", "./test_kb_uploads")
+os.makedirs(path, exist_ok=True)  # Ensure folder exists
     event_handler = KBWatcher()
     observer = Observer()
     observer.schedule(event_handler, path=path, recursive=True)
